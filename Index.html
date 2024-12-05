@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Para linkear los iconos de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Para las fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&family=Yellowtail&display=swap"
+        rel="stylesheet">
+
+    <title>Listado de tareas</title>
+</head>
+<!-- Body= Todo lo que se ve en la pantalla -->
+
+<body>
+    <!-- Encabezado del sitio -->
+    <!-- Tarjeta de tareas-->
+    <div class="contenedor">
+        <div class="encabezado">
+            <!-- Para poner el id com emet # -->
+            <div id="fecha">
+
+            </div>
+            <h1>Lista de tareas</h1>
+            <h2> Puedo escribir mi historia, estoy más allá del arquetipo. No me conformaré. No importa cuánto me sacudas, porque mis raíces son profundas.  
+            - Katy Perry (Rise)
+            </h2>
+        </div>
+        <!-- Para la parte de las tareas agregadas -->
+        <div class="agregar">
+            <input type="text" id="input" placeholder="Escribe una tarea">
+
+            <i id="boton-agregar" class="bi bi-bookmark-plus-fill"></i>
+        </div>
+        <div class="tareas">
+            <h2>Tareas pendientes</h2>
+            <ul id="lista">
+               
+            </ul>
+        </div>
+    </div>
+
+    <!-- Vincular el script de java -->
+    <script src="main.js"></script>
+</body>
+
+</html>
