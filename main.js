@@ -43,14 +43,16 @@ fecha.innerHTML = FECHA.toLocaleDateString('es-MX',{
 
 });
 
+// Función agregar tarea
 function agregarTarea(tarea,id,hecho,eliminar) {
     if (eliminar) {
         return
     };
+
     const realizado = hecho ? check : uncheck;
     const LINE = hecho ? tachado : '';
-    const elemento = ` <li id="elemento">
-    <i id="${id}" class="bi ${realizado}"></i>
+    const elemento = `<li id="elemento">
+    <i id="${id}" data="hecho" class="bi ${realizado}"></i>
     <p class="tarea-lista text ${LINE}">${tarea}</p>
     <i id="${id}" data="eliminar" class="bi bi-x"></i>
 </li> `
@@ -59,15 +61,18 @@ function agregarTarea(tarea,id,hecho,eliminar) {
 };
 
 function tareaRealizada(element) {
-    element.classlist.toggle(check);
-    element.classlist.toggle(uncheck);
-    element.parentNode.querySelector('.text').classlist.toggle(tachado);
+    element.classList.toggle(check);
+    element.classList.toggle(uncheck);
+    element.parentNode.querySelector('.text').classList.toggle(tachado);
     LIST[element.id].realizado = LIST[element.id].realizado ?false :true;
 };
+// Función eliminar un elemento
 function tareaEliminada(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
     LIST[element.id].eliminar = true;
 };
+
+// Función agregar tarea
 botonAgregar.addEventListener("click",()=>{
     const tarea= input.value;
     if(tarea){
@@ -85,18 +90,19 @@ botonAgregar.addEventListener("click",()=>{
          input.value="";
     }
 });
+
 // Para guardar los elemento de la lista en un archivo Json escuchando lo del item event
 lista.addEventListener("click",function(event){
 const element= event.target;
 const elementData= element.attributes.data.value;
 if (elementData== "hecho"){
     tareaRealizada(element);
-} else if (elementData== "eliminar")
-{
+} else if (elementData== "eliminar"){
     tareaEliminada(element);
 };
 localStorage.setItem("TODO",JSON.stringify(LIST));
 });
+
 // Si data existe guarda estos valores en el archivo JSON
 let data=localStorage.getItem("TODO");
 if(data){
@@ -109,7 +115,7 @@ else {
     // lista con elementos vacios
     LIST=[];
     id= 0;
-};
+}
 
 function cargarLista(array){
     array.forEach(

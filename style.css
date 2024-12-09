@@ -12,7 +12,11 @@
     /* Rem= respeta el tamaño de fuente de body (16 pix)*/
     --color-text: #28040b;
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: "Varela Round", sans-serif;
     /* Para mandar traer a la variable backg */
@@ -31,7 +35,7 @@ body {
 .contenedor {
     max-width: 80%;
     width: 400px;
-    height: 600px;
+    height: 800px;
     margin: 0 auto;
     padding: 35px;
     background-color: #ebf2f2;
@@ -73,9 +77,10 @@ body {
 }
 /* Sección de tareas */
 .encabezado h2{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .tareas{
+    margin-top: 40px;
     font-size: 20px;
 }
 .tareas li{
@@ -86,7 +91,7 @@ body {
     margin: 5px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .tareas i:hover{
     color:var(--color-input);
